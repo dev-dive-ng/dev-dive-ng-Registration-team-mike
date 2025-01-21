@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../assets/google-forms.png"
+      type="image/x-icon"
+    />
+    <title>DEV FORM</title>
+    <link rel="stylesheet" href="../build/styles.css">
+  </head>
+  <body>
+    <div class="form-container grid place-content-center ">
+      <h1 class=" bg-slate-500 text-red-800 uppercase font-extrabold">Registration Form</h1>
+      <form action="/submit" method="post" enctype="multipart/form-data" class="p-5">
+        <div class="form-group">
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" name="first_name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" name="last_name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="1234567890"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" required />
+        </div>
+
+        <div class="form-group">
+          <label for="nationality">Nationality</label>
+          <select id="nationality" name="nationality" required>
+            <option value="">Select your nationality</option>
+            <option value="ng">Nigeria</option>
+            <option value="gh">Ghana</option>
+            <option value="sa">south Africa</option>
+            <option value="us">United States</option>
+            <option value="ca">Canada</option>
+            <option value="uk">United Kingdom</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group terms">
+          <input type="checkbox" id="terms" name="terms" required />
+          <label for="terms">I accept the terms and conditions</label>
+        </div>
+
+        <div class="form-group">
+          <label for="profile-picture">Upload Profile Picture</label>
+          <input
+            type="file"
+            id="profile-picture"
+            name="profile_picture"
+            accept="image/*"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
