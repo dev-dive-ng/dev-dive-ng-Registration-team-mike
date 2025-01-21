@@ -38,7 +38,7 @@ To run this project locally, clone the repository:
 
 bash
 Copy
-git clone <repository-url>
+git clone <https://github.com/dev-dive-ng/dev-dive-ng-Registration-team-mike>
 Then, open the index.html file in a web browser to see the form in action.
 
 HOSTING
