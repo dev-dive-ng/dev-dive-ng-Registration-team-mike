@@ -1,12 +1,12 @@
 Simple HTML & CSS Form - Team-1 Entry
 This project is a simple task assigned to the DevDive Cohort-1 students by facilitator/mentor Mr. Uchechukwu Prince Nwulu. The cohort was divided into three teams, and this project is the entry from Team-1.
 
-Team Members / Authors
-Kelechukwu Favour - kelechukwufavour.faye@gmail.com
-Godsplan Elot - elotgodsplan2@gmail.com
-Bello Babatunde - bellobabatunde72@gmail.com
-Michael Adebanjo - adebanjomicheal45@gmail.com
-MBA - [email TBD]
+Team Members/Authors
+Kelechukwu Favour <kelechukwufavour.faye@gmail.com>
+Godsplan Elot <elotgodsplan2@gmail.com>
+Bello Babatunde <bellobabatunde72@gmail.com>
+Michael Adebanjo <adebanjomicheal45@gmail.com>
+Mba Eberechukwu   <mbaeberechukwu444@gmail.com>
 
 Task Overview
 The goal of this project is to build a simple HTML and CSS form that collects the following user data:
