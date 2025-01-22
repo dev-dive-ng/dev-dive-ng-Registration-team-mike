@@ -42,7 +42,7 @@ git clone <https://github.com/dev-dive-ng/dev-dive-ng-Registration-team-mike>
 Then, open the index.html file in a web browser to see the form in action.
 
 HOSTING
-ghpage
+page
 
 ACCESS
 To access this form click on the link (hosted)
