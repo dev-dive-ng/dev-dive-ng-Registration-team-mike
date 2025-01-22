@@ -3,7 +3,7 @@ This project is a simple task assigned to the DevDive Cohort-1 students by facil
 
 Team Members/Authors
 Kelechukwu Favour <kelechukwufavour.faye@gmail.com>
-Godsplan Elot <elotgodsplan2@gmail.com>
+God'splan Elot <elotgodsplan2@gmail.com>
 Bello Babatunde <bellobabatunde72@gmail.com>
 Michael Adebanjo <adebanjomicheal45@gmail.com>
 Mba Eberechukwu   <mbaeberechukwu444@gmail.com>
