@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../assets/google-forms.png"
+      type="image/x-icon"
+    />
+    <title>DEV FORM</title>
+    <link rel="stylesheet" href="../build/styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+          padding: 20px;
+        }
+        .data-container {
+          max-width: 600px;
+          margin: auto;
+          padding: 20px;
+          border: 1px solid #ccc;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+      </style>
+  </head>
+  <body>
+    <div class="min-h-screen bg-white flex items-center justify-center p-3">
+        <div class="w-full max-w-lg bg-white/90 backdrop-blur-md rounded-lg shadow-lg p-8">
+            <h1 class="text-3xl font-extrabold text-center text-purple-700 uppercase mb-8">
+                Registration Successful!
+              </h1>
+            <div class="data-container">
+                <h2>Submitted Data</h2>
+                <div id="dataDisplay"></div>
+              </div>
+            
+             
+
+
+
+        </div>
+    </div>
+
+    <script>
+        // Retrieve data from sessionStorage
+        const formData = JSON.parse(sessionStorage.getItem('formData'));
+        const dataDisplay = document.getElementById('dataDisplay');
+    
+        if (formData) {
+          for (const key in formData) {
+            const value = formData[key];
+            const element = document.createElement('p');
+            element.innerHTML = `<strong>${key}:</strong> ${value}`;
+            dataDisplay.appendChild(element);
+          }
+        } else {
+          dataDisplay.innerHTML = '<p>No data found.</p>';
+        }
+      </script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -18,7 +18,7 @@
         <h1 class="text-3xl font-extrabold text-center text-purple-700 uppercase mb-8">
           Registration Form
         </h1>
-        <form action="/submit" method="post" enctype="multipart/form-data" class="space-y-4 uppercase ">
+        <form action="/submit" method="post" id="userForm" enctype="multipart/form-data" class="space-y-4 uppercase ">
     
           <div class="form-group">
             <label for="first-name" class="block text-sm font-medium text-purple-800">First Name</label>
@@ -48,6 +48,17 @@
           <div class="form-group">
             <label for="password" class="block text-sm font-medium text-purple-800">Password</label>
             <input type="password" id="password" name="password" required class="w-full mt-1 p-2 border border-purple-300 rounded-lg focus:ring-4 focus:ring-purple-500" />
+          </div>
+
+          <div class="form-group">
+            <label for="confirm-password" class="block text-sm font-medium text-purple-800">Confirm Password</label>
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm_password"
+              required
+              class="w-full mt-1 p-2 border border-purple-300 rounded-lg focus:ring-4 focus:ring-purple-500"
+            />
           </div>
     
           <div class="form-group">
@@ -128,7 +139,13 @@
           </div>
     
           <div class="form-group">
-            <button type="submit" class="w-full py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold rounded-lg shadow-lg hover:from-purple-500 hover:to-pink-500 focus:ring-4 focus:ring-purple-500">Submit</button>
+            <button
+              type="button"
+              id="submitBtn"
+              class="w-full py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold rounded-lg shadow-lg hover:from-purple-500 hover:to-pink-500 focus:ring-4 focus:ring-purple-500"
+            >
+              Submit
+            </button>
           </div>
         </form>
       </div>
