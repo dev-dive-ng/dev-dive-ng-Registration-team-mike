@@ -1,66 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="../assets/google-forms.png"
-      type="image/x-icon"
-    />
-    <title>DEV FORM</title>
-    <link rel="stylesheet" href="../build/styles.css" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Result</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-          font-family: Arial, sans-serif;
-          margin: 20px;
-          padding: 20px;
-        }
-        .data-container {
-          max-width: 600px;
-          margin: auto;
-          padding: 20px;
-          border: 1px solid #ccc;
-          border-radius: 10px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-      </style>
-  </head>
-  <body>
-    <div class="min-h-screen bg-white flex items-center justify-center p-3">
-        <div class="w-full max-w-lg bg-white/90 backdrop-blur-md rounded-lg shadow-lg p-8">
-            <h1 class="text-3xl font-extrabold text-center text-purple-700 uppercase mb-8">
-                Registration Successful!
-              </h1>
-            <div class="data-container">
-                <h2>Submitted Data</h2>
-                <div id="dataDisplay"></div>
-              </div>
-            
-             
+</head>
 
+<body class="bg-gray-50 flex items-center justify-center min-h-screen">
 
+    <div class="w-full max-w-lg bg-white rounded-lg shadow-lg p-6 space-y-4">
 
+        <!-- Profile Picture Section -->
+        <div class="flex justify-center">
+            <img id="profile-picture" src="" alt="Profile Picture"
+                class="rounded-full w-36 h-36 object-cover border-4 border-purple-500">
+        </div>
+
+        <h1 class="text-2xl font-bold text-center text-purple-700">Registration Successful</h1>
+
+        <div id="profile-info" class="space-y-2">
+            <div class="flex justify-between">
+                <span class="font-semibold text-purple-700">First Name:</span>
+                <span id="first-name" class="text-gray-700"></span>
+            </div>
+
+            <div class="flex justify-between">
+                <span class="font-semibold text-purple-700">Last Name:</span>
+                <span id="last-name" class="text-gray-700"></span>
+            </div>
+
+            <div class="flex justify-between">
+                <span class="font-semibold text-purple-700">Email:</span>
+                <span id="email" class="text-gray-700"></span>
+            </div>
+
+            <div class="flex justify-between">
+                <span class="font-semibold text-purple-700">Phone:</span>
+                <span id="phone" class="text-gray-700"></span>
+            </div>
+
+            <div class="flex justify-between">
+                <span class="font-semibold text-purple-700">Date of Birth:</span>
+                <span id="dob" class="text-gray-700"></span>
+            </div>
+
+            <div class="flex justify-between">
+                <span class="font-semibold text-purple-700">Nationality:</span>
+                <span id="nationality" class="text-gray-700"></span>
+            </div>
         </div>
     </div>
 
     <script>
         // Retrieve data from sessionStorage
         const formData = JSON.parse(sessionStorage.getItem('formData'));
-        const dataDisplay = document.getElementById('dataDisplay');
-    
+
         if (formData) {
-          for (const key in formData) {
-            const value = formData[key];
-            const element = document.createElement('p');
-            element.innerHTML = `<strong>${key}:</strong> ${value}`;
-            dataDisplay.appendChild(element);
-          }
-        } else {
-          dataDisplay.innerHTML = '<p>No data found.</p>';
+            document.getElementById('first-name').textContent = formData.first_name;
+            document.getElementById('last-name').textContent = formData.last_name;
+            document.getElementById('email').textContent = formData.email;
+            document.getElementById('phone').textContent = formData.phone;
+            document.getElementById('dob').textContent = formData.dob;
+            document.getElementById('nationality').textContent = formData.nationality;
+
+            // Display profile picture
+            const profilePicture = document.getElementById('profile-picture');
+            profilePicture.src = formData.profile_picture; // Base64 string
         }
-      </script>
-    <script src="script.js"></script>
-  </body>
+    </script>
+
+</body>
+
 </html>

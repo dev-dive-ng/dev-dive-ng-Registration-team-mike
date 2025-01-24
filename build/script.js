@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const termsCheckbox = document.getElementById('terms');
   const emailField = document.getElementById('email');
   const submitBtn = document.getElementById('submitBtn');
+  const profilePictureField = document.getElementById('profile-picture');
 
   const validatePassword = () => {
     const password = passwordField.value;
@@ -44,7 +45,16 @@ document.addEventListener('DOMContentLoaded', () => {
     return true;
   };
 
-  submitBtn.addEventListener('click', (event) => {
+  const readProfilePicture = (fileInput) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsDataURL(fileInput.files[0]);
+    });
+  };
+
+  submitBtn.addEventListener('click', async (event) => {
     event.preventDefault();
 
     // Run all validations
@@ -57,15 +67,23 @@ document.addEventListener('DOMContentLoaded', () => {
       // Collect form data
       const formData = new FormData(form);
       const dataObject = {};
+
       formData.forEach((value, key) => {
-        dataObject[key] = value;
+        if (key === 'profile_picture') {
+          // Handle profile picture separately
+          readProfilePicture(profilePictureField).then((base64Image) => {
+            dataObject[key] = base64Image;
+
+            // Save data to sessionStorage
+            sessionStorage.setItem('formData', JSON.stringify(dataObject));
+
+            // Redirect to result.html
+            window.location.href = 'submit_page.html';
+          }).catch((err) => console.error('Error reading file:', err));
+        } else {
+          dataObject[key] = value;
+        }
       });
-
-      // Save data to sessionStorage
-      sessionStorage.setItem('formData', JSON.stringify(dataObject));
-
-      // Redirect to result.html
-      window.location.href = 'submit_page.html';
     }
   });
 });
