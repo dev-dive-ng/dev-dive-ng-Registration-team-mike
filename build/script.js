@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('userForm');
   const passwordField = document.getElementById('password');
@@ -7,15 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const emailField = document.getElementById('email');
   const submitBtn = document.getElementById('submitBtn');
   const profilePictureField = document.getElementById('profile-picture');
-=======
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("userForm");
-  const passwordField = document.getElementById("password");
-  const confirmPasswordField = document.getElementById("confirm-password");
-  const termsCheckbox = document.getElementById("terms");
-  const emailField = document.getElementById("email");
-  const submitBtn = document.getElementById("submitBtn");
->>>>>>> 383339784397f6bf1ab94cea9ea4f0ea557f3b64
 
   const validatePassword = () => {
     const password = passwordField.value;
@@ -55,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return true;
   };
 
-<<<<<<< HEAD
   const readProfilePicture = (fileInput) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -66,9 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   submitBtn.addEventListener('click', async (event) => {
-=======
-  submitBtn.addEventListener("click", (event) => {
->>>>>>> 383339784397f6bf1ab94cea9ea4f0ea557f3b64
     event.preventDefault();
 
     // Run all validations
@@ -98,15 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
           dataObject[key] = value;
         }
       });
-<<<<<<< HEAD
-=======
-
-      // Save data to sessionStorage
-      sessionStorage.setItem("formData", JSON.stringify(dataObject));
-
-      // Redirect to result.html
-      window.location.href = "submit_page.html";
->>>>>>> 383339784397f6bf1ab94cea9ea4f0ea557f3b64
     }
   });
 });
